@@ -25,7 +25,7 @@ class User(db.Model):
     def get_number_of_users(self):
         return self.query.count()
 
-    def add_user(self, username, email, password, idiomas, name, biografia="", photoURL=""):
+    def add_user(self, username, email, password, idiomas, name, photoURL, biografia=""):
 
         new_user = User(
             name=name,

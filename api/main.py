@@ -21,6 +21,7 @@ class __ReturnUser(Resource):
         try:
             return jsonify(
                 message="User found",
+                idiomas=user.query.filter_by(username=username).first().idiomas,
                 username=user.query.filter_by(username=username).first().username,
                 email=user.query.filter_by(username=username).first().email,
                 id=user.query.filter_by(username=username).first().id,
