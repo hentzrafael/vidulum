@@ -1,5 +1,5 @@
 from flask_sqlalchemy import SQLAlchemy
-from create_app import app
+from basic.create_app import app
 import hashlib
 
 #Configs the path to the database
