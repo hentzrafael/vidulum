@@ -3,7 +3,7 @@ from basic.create_app import app
 import hashlib
 
 #Configs the path to the database
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database/database.sqlite'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///../database/database.sqlite'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
@@ -47,4 +47,3 @@ class User(db.Model):
             string += item + " "
         return string
 
-db.create_all()
