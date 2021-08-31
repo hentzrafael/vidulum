@@ -10,23 +10,22 @@ user = User()
 class __Login(Resource):
     def post(self):
         username = request.json['username']
-        print(username)
         password = hashlib.sha256(request.json['password'].encode('utf-8')).hexdigest()
-        if self.check_login():
-            return jsonify(
-                message="Login successful"
-            )
+        return self.check_login(username, password)
         
 
-    def check_login(self):
+    def check_login(self, username, password):
         try:
-            userData = user.query.filter_by(username=self.username).first()
-            if userData.password != self.password:
+            userData = user.query.filter_by(username=username).first()
+            if userData.password == password:
+                return jsonify(
+                    message="Password is correct"
+                )
+            elif userData.password != password:
                 return jsonify(
                     message="Password is incorrect"
                 )
-            else:
-                return True
+            
         except Exception as e:
             print(e)
             return jsonify(
