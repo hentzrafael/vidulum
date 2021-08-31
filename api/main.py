@@ -1,7 +1,3 @@
-from flask import jsonify
-from flask_restful import Resource, request
-
-
 # Import the base apps
 from basic.create_sql import User
 from basic.create_app import app, api
@@ -12,7 +8,7 @@ from resources.index import __IndexInformation
 from resources.search_user import __SearchUser
 from resources.create_user import __CreateUser
 from resources.return_all import __ReturnAll
-
+from resources.login import __Login
 
 #Instance the database
 user = User()
@@ -22,6 +18,7 @@ api.add_resource(__IndexInformation, '/')
 api.add_resource(__CreateUser, '/create')
 api.add_resource(__SearchUser, '/view/<username>')
 api.add_resource(__ReturnAll, '/all')
+api.add_resource(__Login, '/login')
 
 if __name__ == '__main__':
     app.run(debug=True)

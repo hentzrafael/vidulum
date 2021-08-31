@@ -1,6 +1,7 @@
 from flask_restful import Resource, request
 from basic.create_sql import User
 from flask import jsonify
+import sqlite3
 
 
 user = User()
@@ -21,8 +22,15 @@ class __CreateUser(Resource):
             return jsonify(
                 message="User created"
             )
+        
+        except sqlite3.IntegrityError:
+            return jsonify(
+                message="Dados incorretamente preenchidos"
+            )
+
         except Exception as e:
             print(e)
             return jsonify(
                 message="Deu erro"
             )
+        
