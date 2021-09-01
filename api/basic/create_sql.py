@@ -44,7 +44,7 @@ class User(db.Model):
     def get_number_of_users(self):
         return self.query.count()
 
-    def add_user(self, username, email, password, idiomas, name, photoURL,**kwargs):
+    def add_user(self, username, email, password, idiomas, name, photoURL, **kwargs):
 
         new_user = User(
             name=name,
@@ -54,21 +54,21 @@ class User(db.Model):
             email=email, 
             password=hashlib.sha256(password.encode('utf-8')).hexdigest(),
 
-            endereco=kwargs.get("endereco", DEFAULTSTRING),
-            biografia=kwargs.get("biografia", DEFAULTSTRING),
-            formacao_academica=kwargs.get("formacao_academica", DEFAULTSTRING),
-            projetos=kwargs.get("projetos", DEFAULTSTRING),
-            atuacao_profissional=kwargs.get("atuacao_profissional", DEFAULTSTRING),
-            producao_bibliografica=kwargs.get("producao_bibliografica", DEFAULTSTRING),
-            participacao_em_eventos=kwargs.get("participacao_em_eventos", DEFAULTSTRING),
-            areas_de_atuacao=kwargs.get("areas_de_atuacao", DEFAULTSTRING),
-            bancas_de_trabalho=kwargs.get("bancas_de_trabalho", DEFAULTSTRING),
-            producao_tecnica=kwargs.get("producao_tecnica", DEFAULTSTRING),
-            membro_do_corpo_editorial=kwargs.get("membro_do_corpo_editorial", DEFAULTSTRING),
-            producao_artistica=kwargs.get("producao_artistica", DEFAULTSTRING),
-            artigos=kwargs.get("artigos", DEFAULTSTRING),
-            informacao_complementar=kwargs.get("informacao_complementar", DEFAULTSTRING),
-            outras_informacoes_importantes=kwargs.get("outras_informacoes_importantes", DEFAULTSTRING)         
+            # endereco=kwargs.get("endereco", DEFAULTSTRING),
+            # biografia=kwargs.get("biografia", DEFAULTSTRING),
+            # formacao_academica=kwargs.get("formacao_academica", DEFAULTSTRING),
+            # projetos=kwargs.get("projetos", DEFAULTSTRING),
+            # atuacao_profissional=kwargs.get("atuacao_profissional", DEFAULTSTRING),
+            # producao_bibliografica=kwargs.get("producao_bibliografica", DEFAULTSTRING),
+            # participacao_em_eventos=kwargs.get("participacao_em_eventos", DEFAULTSTRING),
+            # areas_de_atuacao=kwargs.get("areas_de_atuacao", DEFAULTSTRING),
+            # bancas_de_trabalho=kwargs.get("bancas_de_trabalho", DEFAULTSTRING),
+            # producao_tecnica=kwargs.get("producao_tecnica", DEFAULTSTRING),
+            # membro_do_corpo_editorial=kwargs.get("membro_do_corpo_editorial", DEFAULTSTRING),
+            # producao_artistica=kwargs.get("producao_artistica", DEFAULTSTRING),
+            # artigos=kwargs.get("artigos", DEFAULTSTRING),
+            # informacao_complementar=kwargs.get("informacao_complementar", DEFAULTSTRING),
+            # outras_informacoes_importantes=kwargs.get("outras_informacoes_importantes", DEFAULTSTRING)         
         )
         for key, value in kwargs.items():
                 if value != None:
