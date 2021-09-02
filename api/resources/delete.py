@@ -9,13 +9,18 @@ user = User()
 class __Delete(Resource):
     def delete(self, username):
         try:
+            password = request.json['password']
+            password = hashlib.sha256(password.encode('utf-8')).hexdigest()
             # username = request.json['username']
             if username == 'admin':
-                return {'message': 'Cannot delete admin'}, 400
+                if password == user.query.filter_by(username='admin').first().password:
+                    requestUsername = request.json['username']
+                    selectedUser = user.query.filter_by(username=requestUsername).first()
+                    user.query.filter_by(username=requestUsername).delete()
+                    db.session.commit()
+                    return {'message': 'Deleted selected user'}
             database_passwd = user.query.filter_by(username=username).first()
             database_passwd = database_passwd.password
-            password = request.json['password']
-            password = hashlib.sha256('rafa1234'.encode('utf-8')).hexdigest()
             if password == database_passwd:
                 user.query.filter_by(username=username).delete()
                 db.session.commit()
