@@ -8,9 +8,6 @@ from basic.create_sql import User
 # Instance the user table
 user = User()
 
-#Default information for the missing content
-DEFAULTSTRING = "Não há informações cadastradas neste tópico"
-
 class __CreateUser(Resource):
     def post(self):
         try:
