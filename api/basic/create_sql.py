@@ -75,5 +75,9 @@ class User(db.Model):
             string += item + "$"
         return string
 
+    # Get a user with the given username
+    def get_user(self, username):
+        return self.query.filter_by(username=username).first()
+        
 # Creates all the tables in the database
 db.create_all()
