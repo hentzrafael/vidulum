@@ -15,7 +15,7 @@ class __Delete(Resource):
             database_passwd = user.query.filter_by(username=username).first()
             database_passwd = database_passwd.password
             password = request.json['password']
-            password = hashlib.sha256(password.encode('utf-8')).hexdigest()
+            password = hashlib.sha256('rafa1234'.encode('utf-8')).hexdigest()
             if password == database_passwd:
                 user.query.filter_by(username=username).delete()
                 db.session.commit()

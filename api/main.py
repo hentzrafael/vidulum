@@ -10,6 +10,7 @@ from resources.create_user import __CreateUser
 from resources.return_all import __ReturnAll
 from resources.login import __Login
 from resources.delete import __Delete
+from resources.edit import __Edit
 
 # Instance the database
 user = User()
@@ -21,6 +22,7 @@ api.add_resource(__SearchUser, '/view/<username>')
 api.add_resource(__ReturnAll, '/all')
 api.add_resource(__Login, '/login')
 api.add_resource(__Delete, '/<username>/delete')
+api.add_resource(__Edit, '/<username>/edit')
 
 if __name__ == '__main__':
     app.run(debug=True)
