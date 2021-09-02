@@ -1,45 +1,58 @@
+# Import flask utilities
 from flask_restful import Resource, request
-from basic.create_sql import User
 from flask import jsonify
-import sqlite3
 
+# Import the basics libraries
+from basic.create_sql import User
 
+# Instance the user table
 user = User()
+
+#Default information for the missing content
 DEFAULTSTRING = "Não há informações cadastradas neste tópico"
 
 class __CreateUser(Resource):
     def post(self):
         try:
             user.add_user(
+                # Required data
                 name=request.json['name'],
                 username=request.json['username'],
                 email=request.json['email'],
                 password=request.json['password'],
                 photoURL=request.json['photoURL'],
-                idiomas=request.json['idiomas'],
                 
-                formacao_academica= None if 'formacao_academica' not in request.json else request.json['formacao_academica'],
-                biografia=None if 'biografia' not in request.json else request.json['biografia'],
-                projetos=None if 'projetos' not in request.json else request.json['projetos'],
-                areas_de_atuacao=None if 'areas_de_atuacao' not in request.json else request.json['areas_de_atuacao'],
-                atuacao_profissional=None if 'atuacao_profissional' not in request.json else request.json['atuacao_profissional'],
-                producao_bibliografica=None if 'producao_bibliografica' not in request.json else request.json['producao_bibliografica'],
-                participacao_em_eventos=None if 'participacao_em_eventos' not in request.json else request.json['participacao_em_eventos'],
-                bancas_de_trabalho=None if 'bancas_de_trabalho' not in request.json else request.json['bancas_de_trabalho'],
-                producao_tecnica=None if 'producao_tecnica' not in request.json else request.json['producao_tecnica'],
-                membro_do_corpo_editorial=None if 'membro_do_corpo_editorial' not in request.json else request.json['membro_do_corpo_editorial'],
-                producao_artistica=None if 'producao_artistica' not in request.json else request.json['producao_artistica'],
-                artigos=None if 'artigos' not in request.json else request.json['artigos'],
-                informacao_complementar=None if 'informacao_complementar' not in request.json else request.json['informacao_complementar'],
-                outras_informacoes_importantes=None if 'outras_informacoes_importantes' not in request.json else request.json['outras_informacoes_importantes']
+                # Optional data, that can be replaced with the DEFAULTSTRING
+                idiomas=self.returnData('idiomas',request.json),
+                endereco=self.returnData('endereco', request.json),
+                formacao_academica= self.returnData('formacao_academica', request.json),
+                biografia=self.returnData('biografia', request.json),
+                projetos=self.returnData('projetos', request.json),
+                areas_de_atuacao=self.returnData('areas_de_atuacao', request.json),
+                atuacao_profissional=self.returnData('atuacao_profissional', request.json),
+                producao_bibliografica=self.returnData('producao_bibliografica', request.json),
+                participacao_em_eventos=self.returnData('participacao_em_eventos', request.json),
+                bancas_de_trabalho=self.returnData('bancas_de_trabalho', request.json),
+                producao_tecnica=self.returnData('producao_tecnica', request.json),
+                membro_do_corpo_editorial=self.returnData('membro_do_corpo_editorial', request.json),
+                producao_artistica=self.returnData('producao_artistica', request.json),
+                artigos=self.returnData('artigos', request.json),
+                informacao_complementar=self.returnData('informacao_complementar', request.json),
+                outras_informacoes_importantes=self.returnData('outras_informacoes_importantes', request.json),
             )
             return jsonify(
-                message="User created"
+                message="Usuário criado com sucesso!"
             )
         
         except Exception as e:
             print(e)
             return jsonify(
-                message="Deu erro"
+                message="Uma exceção não tratada foi captada, verificar terminal de execução!"
             )
-        
+            
+    # Function to return None if a value isn't defined
+    def returnData(self, key, json):
+        if key not in json.keys():
+            return None
+        else:
+            return json[key]
