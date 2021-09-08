@@ -11,7 +11,11 @@ user = User()
 # Return all users in the terminal
 class __ReturnAll(Resource):
     def get(self):
-        print(user.query.all())
+        listaDeUsers = []
+        # Add all users to the list
+        for usuario in user.query.all():
+            listaDeUsers.append(usuario.username)
         return jsonify(
-            message="Users found",
+            message="Usuários Encontrados",
+            users=listaDeUsers
         )

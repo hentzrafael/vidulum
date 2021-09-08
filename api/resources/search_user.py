@@ -1,16 +1,20 @@
+# Import the basic functions and flask utilities
 from flask_restful import Resource
 from flask import jsonify
 from basic.create_sql import User
 
+# Instances the user table
 user = User()
 
 
 class __SearchUser(Resource):
     def get(self, username):
         try:
+            # Search for the user in the table
             userData = user.query.filter_by(username=username).first()
             return jsonify(
                 message="User found",
+                # Return the required data
                 idiomas=user.query.filter_by(username=username).first().idiomas,
                 username=user.query.filter_by(username=username).first().username,
                 email=user.query.filter_by(username=username).first().email,
@@ -20,6 +24,7 @@ class __SearchUser(Resource):
                 imagem=user.query.filter_by(username=username).first().photoURL,
                 nome=user.query.filter_by(username=username).first().name,
 
+                # Return the optional data
                 endereco=userData.endereco,
                 formacao_academica=userData.formacao_academica,
                 projetos=userData.projetos,
@@ -38,5 +43,5 @@ class __SearchUser(Resource):
         except  Exception as e:
             print(e)
             return jsonify(
-                message="User does not exist"
+                message="Uma exceção não tratada foi encontrada, verifique o terminal de execução!"
             )
