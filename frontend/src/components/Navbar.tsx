@@ -11,7 +11,7 @@ export default class Navbar extends Component {
           <NavButton title = "Meu Portfólio"/>
           <div className="search">
             <form action="">
-                <Input placeholder="Digite o seu nome para pesquisar"/>
+                <Input placeholder="Pesquise aqui"/>
                 <NavButton title="Pesquisar"/>
             </form>
           </div>

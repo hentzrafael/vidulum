@@ -1,5 +1,6 @@
 import React from 'react';
 import '../styles/CenterContainer.css'
+import Title from './centerData/Title';
 
 export default class CenterContainer extends React.Component {
     props = {
@@ -9,9 +10,10 @@ export default class CenterContainer extends React.Component {
     render() {
         return (
             <div className="center-container">
-                <div className="image">
-                    <img src={this.props.imgUrl} alt={this.props.alt} />
+                <div>
+                    <img className="image" src={this.props.imgUrl} alt={this.props.alt} />
                 </div>
+                <Title title="Bergamo GAY" />
             </div>
         );
     }
