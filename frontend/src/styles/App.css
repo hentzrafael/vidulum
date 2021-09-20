@@ -1,5 +1,12 @@
+:root{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: .6rem;
+}
 .App {
   text-align: center;
+  height: 100%;
 }
 
 .App-logo {
