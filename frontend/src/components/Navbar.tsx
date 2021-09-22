@@ -8,10 +8,11 @@ export default class Navbar extends Component {
     return (
       <div className="navbar">
           <NavButton title = "Página Inicial"/>
-          <NavButton title = "Meu Portfólio"/>
+          <NavButton title = "Criar Usuário"/>
+          <NavButton title = "Editar portfólio"/>
           <div className="search">
             <form action="">
-                <Input placeholder="Pesquise aqui"/>
+                <Input placeholder="Digite aqui"/>
                 <NavButton title="Pesquisar"/>
             </form>
           </div>

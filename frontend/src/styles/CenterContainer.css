@@ -1,5 +1,4 @@
 .center-container{
-    display: flex;
     align-items: baseline;
 
     margin: auto;
@@ -11,11 +10,9 @@
 
     width: 80%;
 
-    height: 200rem;
 }
 
 .center-container p{
-    font-size: 2.5rem;
     color: black;
 }
 
