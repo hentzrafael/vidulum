@@ -1,6 +1,7 @@
 import React from 'react';
 import '../styles/CenterContainer.css'
 import Title from './centerData/Title';
+import Header from './Header/Header';
 
 export default class CenterContainer extends React.Component {
     props = {
@@ -10,10 +11,7 @@ export default class CenterContainer extends React.Component {
     render() {
         return (
             <div className="center-container">
-                <div>
-                    <img className="image" src={this.props.imgUrl} alt={this.props.alt} />
-                </div>
-                <Title title="Bergamo GAY" />
+                <Header title="Tiago Mazzutti" biografia="Eu sou tiago"photoUrl="https://pbs.twimg.com/profile_images/1362784994188476420/om5lsyFF_400x400.png"/>
             </div>
         );
     }

@@ -4,7 +4,7 @@ import '../styles/App.css';
 import '../styles/Navbar.css'
 import Navbar from './Navbar';
 import CenterContainer from './CenterContainer'
-import Header from './portfolioHeader/Header'
+import Header from './Header/Header'
 
 export default function App() {
   document.title = 'Portfolio React + Flask ';
@@ -12,7 +12,6 @@ export default function App() {
     <div className="App">
       <Navbar />
       <CenterContainer imgUrl="https://pbs.twimg.com/profile_images/1362784994188476420/om5lsyFF_400x400.png " alt= "image not defined"/>
-      <Header />
       <header className="App-header">
         <title>Teste</title>
         <img src={logo} className="App-logo" alt="logo" />
