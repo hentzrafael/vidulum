@@ -21,8 +21,8 @@ class __SearchUser(Resource):
                 id=user.query.filter_by(username=username).first().id,
                 password=user.query.filter_by(username=username).first().password,
                 biografia=user.query.filter_by(username=username).first().biografia,
-                imagem=user.query.filter_by(username=username).first().photoURL,
-                nome=user.query.filter_by(username=username).first().name,
+                photoURL=user.query.filter_by(username=username).first().photoURL,
+                name=user.query.filter_by(username=username).first().name,
 
                 # Return the optional data
                 endereco=userData.endereco,

@@ -1,13 +1,8 @@
 import React, {Component} from 'react';
 import './Section.css';
 
-interface SectionProps{
-    title: string,
-    description: string
-}
-
 export default class Section extends Component{
-    props: SectionProps = {
+    props= {
         title: "",
         description: ""
     }

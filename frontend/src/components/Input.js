@@ -1,7 +1,7 @@
 import React from 'react';
 import '../styles/Input.css'
 
-export default class Input extends React.Component<any, any> {
+export default class Input extends React.Component {
     props = {
         placeholder: ""
     }

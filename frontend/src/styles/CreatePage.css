@@ -1,0 +1,7 @@
+.form-container{
+    margin-top: 5.3rem;
+}
+
+.form-container label,input{
+    display: block;
+}

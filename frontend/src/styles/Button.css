@@ -5,7 +5,7 @@
 
     font-size: 1.8rem;
     font-weight: bold;
-    text-align: center;
+    /* text-align: center; */
 
     display: flex;
     justify-content: center;
@@ -19,4 +19,9 @@
 .nav-button:hover{
     background-color: #0F5A8B;
     cursor: pointer;
+}
+
+.navbar-icon{
+    height: 3rem;
+    position: relative;
 }

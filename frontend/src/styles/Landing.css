@@ -1,0 +1,9 @@
+.container{
+    background-color: #1169A9;
+    display: flex;
+    height: 100vh;
+}
+
+.container .right .title{
+    font-size: 20rem;
+}
