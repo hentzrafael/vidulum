@@ -11,10 +11,13 @@ export default function LandingPage() {
         </div>
         <div className="right">
           <h1 className="title">Vidulum</h1>
+          <div className="buttons">
+            <a href="/create" className="btn-create">Criar</a>
+            <a href="/view" className="btn-view">Ver</a>
+            <a href="/edit" className="btn-edit">Editar</a>
+            <a href="/admin" className="backlog">Backlog</a>
+          </div>
           
-          <a href="/create">Criar</a>
-          <a href="/view">ver</a>
-          <a href="/edit">Editar</a>
         </div>
     </div>
   );

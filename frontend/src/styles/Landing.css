@@ -7,3 +7,14 @@
 .container .right .title{
     font-size: 20rem;
 }
+
+.container .right .buttons{
+    padding: 1rem;
+    display: flex;
+    background-color: aliceblue;
+}
+
+.container .right .buttons .backlog{
+    margin-top: 3rem;
+    background-color: red;
+}

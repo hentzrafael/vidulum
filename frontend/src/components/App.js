@@ -6,6 +6,9 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import LandingPage from './Pages/LandingPage';
 import CreatePage from './Pages/CreatePage';
 import EditPage from './Pages/EditPage';
+import AdminPage from './Pages/Admin';
+
+
 export default function App() {
   document.title = 'Portfolio React + Flask ';
   return (
@@ -21,6 +24,7 @@ export default function App() {
         <Route path="/edit">
           <EditPage/>
         </Route>
+        <Route path="/admin" component={AdminPage}/>
       </Router>
 
       {/* TODO: Arrumar a Navbar */}
