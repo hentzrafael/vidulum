@@ -3,17 +3,22 @@
     width: 100%;
 }
 
-.header .header__photo{
+.header .header-photo{
     margin-left: 5rem;
     margin-top: 5rem;
 }
 
-.header  .header__photo img{
+.header  .header-photo img{
     border-radius: 300px;
     height: 30rem;
 }
 
-.header .header__title .title{
+.header .header-title{
+    align-items: center !important;
+    text-align: center;
+}
+
+.header .header-title .title{
     background-color: #1169A9;
 
     border-radius: 10px;
@@ -31,24 +36,13 @@
     text-align: center;
     width: 100rem;
 }
-/* 
-.header .header__title hr{
-    margin-top: 3rem;
-    width: 90rem;
+
+ 
+.header  .header-title .bio {
+    font-size: 2rem;
+
     margin-left: 10rem;
-
-    height: .14rem;
-    background-color: black;
-} */
-/* 
-.header  .header__title h3 {
-    margin-left: 5rem;
-    margin-right: 7rem;
-    margin-top: 3rem;
-
-    font-size: 1.5rem;
     color: black;
-    font-weight: 500;
-
-    text-justify: distribute;
-} */
+    width: 103rem;
+    font-weight: 400;
+}

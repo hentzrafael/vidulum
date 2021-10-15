@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, {Component} from 'react';
-
+import './EditForm.css'
 class Form extends Component{
     constructor(props){
         super(props);
@@ -51,14 +51,10 @@ class Form extends Component{
         axios.post(this.props.url, data)
     }
 
-    async getAPIData(username){
-        const response = await axios.get("http://localhost:5000/view/"+username)
-        this.dadosApi = response.data
-    }
 
     render(){
         return (
-            <div className="form-">
+            <div className="edit-form">
             <form>
                     <label for="password">
                         Senha:
@@ -134,7 +130,7 @@ class Form extends Component{
                         Outras Informações Importantes:
                         <textarea type="text" name="outras_informacoes_importantes" id="outras_informacoes_importantes" onChange={this.handleInputChange}/>
                     </label>
-                    <button  type="submit"onClick={this.handleSubmit}>Cadastrar</button>
+                    <button  type="submit" className="submit-btn" onClick={this.handleSubmit}>Editar</button>
 
                 </form>
         </div>

@@ -1,20 +1,25 @@
 import React from 'react';
-import '../styles/App.css';   
-import '../styles/Navbar.css'
-import Portfolio from './Portfolio'
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import '../styles/App.css';
+import '../styles/Navbar.css';
+import AdminPage from './Pages/Admin/Admin';
+import CreatePage from './Pages/CreatePage/CreatePage';
+import EditPage from './Pages/EditPage/EditPage';
+import InformUser from './Pages/InformUser/InformUser';
 import LandingPage from './Pages/LandingPage/LandingPage';
-import CreatePage from './Pages/CreatePage';
-import EditPage from './Pages/EditPage';
-import AdminPage from './Pages/Admin';
-
+import Portfolio from './Pages/ViewPage/ViewPage';
 
 export default function App() {
-  document.title = 'Portfolio React + Flask ';
+  document.title = 'Vidulum';
   return (
     <div className="App">
+      <link rel="preconnect" href="https://fonts.googleapis.com"/>
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+      <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;700&family=Tangerine:wght@400;700&display=swap" rel="stylesheet"/>
+
       <Router>
         <Route path="/home" component={LandingPage}/>
+        <Route path="/select-user" component={InformUser}/>
         <Route path="/view">
           <Portfolio/>
         </Route>

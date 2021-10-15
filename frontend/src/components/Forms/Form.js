@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, {Component} from 'react';
+import './Form.css'
 
 class Form extends Component{
     constructor(props){
@@ -48,7 +49,7 @@ class Form extends Component{
 
     render(){
         return (
-            <div className="form-">
+            <div className="create-form">
             <form>
                     <label for="name">
                         Nome:
@@ -75,70 +76,70 @@ class Form extends Component{
                     </label>
                     <label for="biografia">
                         Biografia:
-                        <input type="text" name="biografia" id="biografia" required onChange={this.handleInputChange}/>
+                        <textarea type="text" name="biografia" id="biografia" required onChange={this.handleInputChange}/>
                     </label>
                     <label for="endereco">
                         Endereço:
-                        <input type="text" name="endereco" id="endereco" onChange={this.handleInputChange}/>
+                        <textarea type="text" name="endereco" id="endereco" onChange={this.handleInputChange}/>
                     </label>
 
                     <label for="idiomas">
                         Idiomas:
-                        <input type="text" name="idiomas" id="idiomas" onChange={this.handleInputChange}/>
+                        <textarea type="text" name="idiomas" id="idiomas" onChange={this.handleInputChange}/>
                     </label>
                     <label for="formacao_academica">
                         Formação Acadêmica:
-                        <input type="text" name="formacao_academica" id="formacao_academica" onChange={this.handleInputChange}/>
+                        <textarea type="text" name="formacao_academica" id="formacao_academica" onChange={this.handleInputChange}/>
                     </label>
                     <label for="projetos">
                         Projetos:
-                        <input type="text" name="projetos" id="projetos" onChange={this.handleInputChange}/>
+                        <textarea type="text" name="projetos" id="projetos" onChange={this.handleInputChange}/>
                     </label>
                     <label for="atuacao_profissional">
                         Atuação Profissional:
-                        <input type="text" name="atuacao_profissional" id="atuacao_profissional" onChange={this.handleInputChange}/>
+                        <textarea type="text" name="atuacao_profissional" id="atuacao_profissional" onChange={this.handleInputChange}/>
                     </label>
                     <label for="producao_bibliografica">
                         Produção Bibliográfica:
-                        <input type="text" name="producao_bibliografica" id="producao_bibliografica" onChange={this.handleInputChange}/>
+                        <textarea type="text" name="producao_bibliografica" id="producao_bibliografica" onChange={this.handleInputChange}/>
                     </label>
                     <label for="participacao_em_eventos">
                         Participação em Eventos:
-                        <input type="text" name="participacao_em_eventos" id="participacao_em_eventos" onChange={this.handleInputChange}/>
+                        <textarea type="text" name="participacao_em_eventos" id="participacao_em_eventos" onChange={this.handleInputChange}/>
                     </label>
                     <label for="areas_de_atuacao">
                         Áreas de Atuação:
-                        <input type="text" name="areas_de_atuacao" id="areas_de_atuacao" onChange={this.handleInputChange}/>
+                        <textarea type="text" name="areas_de_atuacao" id="areas_de_atuacao" onChange={this.handleInputChange}/>
                     </label>
                     <label for="bancas_de_trabalho">
                         Bancas de Trabalho:
-                        <input type="text" name="bancas_de_trabalho" id="bancas_de_trabalho" onChange={this.handleInputChange}/>
+                        <textarea type="text" name="bancas_de_trabalho" id="bancas_de_trabalho" onChange={this.handleInputChange}/>
                     </label>
                     <label for="producao_tecnica">
                         Produção Técnica:
-                        <input type="text" name="producao_tecnica" id="producao_tecnica" onChange={this.handleInputChange}/>
+                        <textarea type="text" name="producao_tecnica" id="producao_tecnica" onChange={this.handleInputChange}/>
                     </label>
                     <label for="membro_do_corpo-editorial">
                         Membro do Corpo Editorial:
-                        <input type="text" name="membro_do_corpo-editorial" id="membro_do_corpo-editorial" onChange={this.handleInputChange}/>
+                        <textarea type="text" name="membro_do_corpo-editorial" id="membro_do_corpo-editorial" onChange={this.handleInputChange}/>
                     </label>
                     <label for="producao_artistica">
                         Produção Artística:
-                        <input type="text" name="producao_artistica" id="producao_artistica" onChange={this.handleInputChange}/>
+                        <textarea type="text" name="producao_artistica" id="producao_artistica" onChange={this.handleInputChange}/>
                     </label>
                     <label for="artigos">
                         Artigos:
-                        <input type="text" name="artigos" id="artigos" onChange={this.handleInputChange}/>
+                        <textarea type="text" name="artigos" id="artigos" onChange={this.handleInputChange}/>
                     </label>
                     <label for="informacao_complementar">
                         Informação Complementar:
-                        <input type="text" name="informacao_complementar" id="informacao_complementar" onChange={this.handleInputChange}/>
+                        <textarea type="text" name="informacao_complementar" id="informacao_complementar" onChange={this.handleInputChange}/>
                     </label>
                     <label for="outras_informacoes_importantes">
                         Outras Informações Importantes:
-                        <input type="text" name="outras_informacoes_importantes" id="outras_informacoes_importantes" onChange={this.handleInputChange}/>
+                        <textarea type="text" name="outras_informacoes_importantes" id="outras_informacoes_importantes" onChange={this.handleInputChange}/>
                     </label>
-                    <button  type="submit"onClick={this.handleSubmit}>Cadastrar</button>
+                    <button className="submit-btn" type="submit"onClick={this.handleSubmit}>Cadastrar</button>
                     
 
                 </form>

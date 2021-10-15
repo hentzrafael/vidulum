@@ -7,15 +7,14 @@ export default class Header extends Component {
     render() {
         return (
             <div className="header">
-                <div className="header__photo">
+                <div className="header-photo">
                     <img src={this.props.photoUrl} alt="Foto do usuário"/>
                 </div>                    
-                <div className="header__title">
+                <div className="header-title">
                     <h1 className="title">{this.props.title}</h1>
-                    {/* <hr /> */}
-                    <h3>
+                    <h5 className="bio">
                         {this.props.biografia}
-                    </h3>
+                    </h5>
                 </div>
             </div>
         );

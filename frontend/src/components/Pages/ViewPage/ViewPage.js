@@ -1,19 +1,21 @@
-import React from 'react';
-import '../styles/CenterContainer.css'
-import Header from './Header/Header';
-import Section from './Section/Section';
 import axios from 'axios';
-import Navbar from './Navbar';
+import React from 'react';
+import Header from '../../Header/Header';
+import Navbar from '../../Navbar';
+import Section from '../../Section/Section';
+import './ViewPage.css';
+
 
 
 
 
 
 export default function Portfolio() {
+        const selectedUser = sessionStorage.getItem("username")
         const [data, setData] = React.useState({});
 
         async function getData() {
-            const response = await axios.get('http://127.0.0.1:5000/view/potiana');
+            const response = await axios.get('http://127.0.0.1:5000/view/'+selectedUser);
             console.log(response.data);
             setData(response.data);
         }
@@ -28,6 +30,7 @@ export default function Portfolio() {
             
             <div className="center-container">
                 <Navbar />
+                
                 <Header title={data.name} biografia={data.biografia}  photoUrl={data.photoURL}/>
                 <Section title="Endereço" description={data.endereco}/>
                 <Section title="Formação Acadêmica" description={data.formacao_academica}/>

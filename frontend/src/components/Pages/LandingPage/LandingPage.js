@@ -13,8 +13,11 @@ export default function LandingPage() {
           <h1 className="title">Vidulum</h1>
           <div className="buttons">
             <a href="/create" className="btn-create">Criar</a>
-            <a href="/view" className="btn-view">Ver</a>
-            <a href="/edit" className="btn-edit">Editar</a>
+            <a href="/select-user" onClick={() => {
+              sessionStorage.removeItem("url")
+              sessionStorage.setItem("url","/view")
+            }} className="btn-view">Ver</a>
+            <a href="/select-user" className="btn-edit" onClick={sessionStorage.setItem("url","/edit")}>Editar</a>
             <a href="/admin" className="backlog">Backlog</a>
           </div>
           

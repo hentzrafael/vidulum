@@ -1,0 +1,29 @@
+.admin-container{
+    background-color: #E3E3E3;
+    width: 70%;
+    margin: 0   auto 0 auto;
+    margin-top: 8rem;
+
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px 10px 0 0;
+
+    height: 70vh;
+    font-size: 1.5rem;
+    align-items: center;
+
+}
+
+.admin-container input{
+    height: 4rem;
+    width: 30rem;
+    border: 1px solid grey;
+
+    border-radius: 10px;
+}
+
+.admin-container label{
+    text-align: center;
+}
+

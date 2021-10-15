@@ -1,0 +1,6 @@
+.edit-container{
+    margin-top: 8rem;
+}
+.edit-container label,input{
+    display: block;
+}
