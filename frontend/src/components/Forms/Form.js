@@ -70,9 +70,9 @@ class Form extends Component{
                         Email:
                         <input type="email" name="email" id="email" required onChange={this.handleInputChange}/>
                     </label>
-                    <label for="photo">
+                    <label for="photoURL">
                         URL da imagem:
-                        <input type="text" name="photo" id="photo" required onChange={this.handleInputChange}/>
+                        <input type="text" name="photoURL" id="photoURL" required onChange={this.handleInputChange}/>
                     </label>
                     <label for="biografia">
                         Biografia:
@@ -119,9 +119,9 @@ class Form extends Component{
                         Produção Técnica:
                         <textarea type="text" name="producao_tecnica" id="producao_tecnica" onChange={this.handleInputChange}/>
                     </label>
-                    <label for="membro_do_corpo-editorial">
+                    <label for="membro_do_corpo_editorial">
                         Membro do Corpo Editorial:
-                        <textarea type="text" name="membro_do_corpo-editorial" id="membro_do_corpo-editorial" onChange={this.handleInputChange}/>
+                        <textarea type="text" name="membro_do_corpo_editorial" id="membro_do_corpo_editorial" onChange={this.handleInputChange}/>
                     </label>
                     <label for="producao_artistica">
                         Produção Artística:

@@ -31,7 +31,7 @@ export default function Portfolio() {
             <div className="center-container">
                 <Navbar />
                 
-                <Header title={data.name} biografia={data.biografia}  photoUrl={data.photoURL}/>
+                <Header title={data.name} biografia={data.biografia}  src={data.photoURL}/>
                 <Section title="Endereço" description={data.endereco}/>
                 <Section title="Formação Acadêmica" description={data.formacao_academica}/>
                  <Section title="Formação Complementar" description={data.informacao_complementar}/>
