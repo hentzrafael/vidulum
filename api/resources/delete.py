@@ -17,7 +17,7 @@ def encodePassword(password):
 
 
 class __Delete(Resource):
-    def delete(self, username):
+    def post(self, username):
         try:
             request_password = request.json['password']
             request_password = encodePassword(request_password)

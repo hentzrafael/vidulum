@@ -3,7 +3,7 @@ import '../styles/App.css';
 import '../styles/Navbar.css'
 import Portfolio from './Portfolio'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import LandingPage from './Pages/LandingPage';
+import LandingPage from './Pages/LandingPage/LandingPage';
 import CreatePage from './Pages/CreatePage';
 import EditPage from './Pages/EditPage';
 import AdminPage from './Pages/Admin';

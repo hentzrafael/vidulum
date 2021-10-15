@@ -1,11 +1,11 @@
 import React from "react";
-import resume from '../../img/resume.svg'
-import '../../styles/Landing.css'
+import resume from '../../../img/resume.svg'
+import './LandingPage.css'
 
 
 export default function LandingPage() {
   return (
-    <div className="container">
+    <div className="landing-container">
         <div className="left">
             <img src={resume} />
         </div>

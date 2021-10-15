@@ -24,8 +24,8 @@ export default class AdminPage extends Component{
 }
     handleSubmit(e){
         e.preventDefault();
-        const data = {username:"jornada",password:"admin"}
-        axios.delete("http://localhost:5000/admin/delete", data)
+        const data = this.state
+        axios.post("http://localhost:5000/admin/delete", data)
     }
 
     render(){
