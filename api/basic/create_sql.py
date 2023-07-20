@@ -78,6 +78,6 @@ class User(db.Model):
     # Get a user with the given username
     def get_user(self, username):
         return self.query.filter_by(username=username).first()
-        
 # Creates all the tables in the database
-db.create_all()
+with app.app_context():
+    db.create_all()
