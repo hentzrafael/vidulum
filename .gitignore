@@ -3,3 +3,4 @@ venv
 __pycache__
 .vscode
 *_old
+frontend/package_lock.json
