@@ -18,7 +18,7 @@ export default function App() {
       <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;700&family=Tangerine:wght@400;700&display=swap" rel="stylesheet"/>
 
       <Router>
-        <Route path="/home" component={LandingPage}/>
+        <Route path="//" component={LandingPage}/>
         <Route path="/select-user" component={InformUser}/>
         <Route path="/view">
           <Portfolio/>
@@ -32,9 +32,6 @@ export default function App() {
         <Route path="/admin" component={AdminPage}/>
       </Router>
 
-      {/* TODO: Arrumar a Navbar */}
-      {/* <Navbar /> */}
-      
     </div>
   );
 }

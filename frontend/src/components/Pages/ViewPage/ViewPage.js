@@ -16,7 +16,6 @@ export default function Portfolio() {
 
         async function getData() {
             const response = await axios.get('http://127.0.0.1:5000/view/'+selectedUser);
-            console.log(response.data);
             setData(response.data);
         }
 

@@ -7,7 +7,7 @@ export default class Navbar extends Component {
     render() {
     return (
       <div className="navbar">
-          <a href="/home" className="navbar-icon"><img src={icon} alt="home" className="navbar-icon"/></a>
+          <a href="/" className="navbar-icon"><img src={icon} alt="home" className="navbar-icon"/></a>
           </div>
       )
 }}
