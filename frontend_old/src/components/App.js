@@ -10,26 +10,31 @@ import LandingPage from './Pages/LandingPage/LandingPage';
 import Portfolio from './Pages/ViewPage/ViewPage';
 
 export default function App() {
-  document.title = 'Vidulum';
   return (
     <div className="App">
-      <link rel="preconnect" href="https://fonts.googleapis.com"/>
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-      <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;700&family=Tangerine:wght@400;700&display=swap" rel="stylesheet"/>
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;700&family=Tangerine:wght@400;700&display=swap" rel="stylesheet" />
 
       <Router>
-        <Route path="//" component={LandingPage}/>
-        <Route path="/select-user" component={InformUser}/>
+        <Route path="//">
+          <LandingPage />
+        </Route>
+        <Route path="/select-user">
+          <InformUser />
+        </Route>
         <Route path="/view">
-          <Portfolio/>
+          <Portfolio />
         </Route>
         <Route path="/create">
-          <CreatePage/>
+          <CreatePage />
         </Route>
         <Route path="/edit">
-          <EditPage/>
+          <EditPage />
         </Route>
-        <Route path="/admin" component={AdminPage}/>
+        <Route path="/admin">
+          <AdminPage />
+        </Route>
       </Router>
 
     </div>

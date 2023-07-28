@@ -1,0 +1,18 @@
+.search{
+    display: flex;
+
+}
+.input{
+    float: left;
+
+    align-self: flex-end;
+    height: 3.5rem;
+    width: 50rem;
+
+    text-align: center;
+    margin-top: calc(5.3rem/2  -  1.65rem);
+    margin-right: 1rem;
+
+    border-radius: 1rem;
+    border: none;
+}   
