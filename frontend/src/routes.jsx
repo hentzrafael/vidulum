@@ -1,6 +1,7 @@
 import {createBrowserRouter} from 'react-router-dom';
 import LoginPage from './pages/LoginPage';
 import CreateAccountPage from './pages/CreateAccountPage';
+import ViewCVPage from './pages/ViewCVPage';
 
 export const router = createBrowserRouter([
     {
@@ -16,6 +17,10 @@ export const router = createBrowserRouter([
     {
         path:"/signup",
         element:<CreateAccountPage/>
+    },
+    {
+        path:"/cv/:id",
+        element:<ViewCVPage/>
     },
     {
         path:"*",
