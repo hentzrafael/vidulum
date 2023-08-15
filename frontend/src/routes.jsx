@@ -1,5 +1,6 @@
 import {createBrowserRouter} from 'react-router-dom';
 import LoginPage from './pages/LoginPage';
+import CreateCVPage from './pages/CreateCVPage'
 import CreateAccountPage from './pages/CreateAccountPage';
 import ViewCVPage from './pages/ViewCVPage';
 
@@ -7,16 +8,18 @@ export const router = createBrowserRouter([
     {
         path:"/",
         element: <LoginPage/>,
-        // children:[
-        //     {
-        //         path:"/teste",
-        //         element:<CreatePage/>
-        //     }
-        // ] //Formato para adicionar páginas dentro uma da outra
     },
     {
         path:"/signup",
         element:<CreateAccountPage/>
+    },
+    {
+        path:"/create",
+        element:<CreateCVPage/>
+    },
+    {
+        path:"/view/:id",
+        element:<ViewCVPage/>
     },
     {
         path:"/cv/:id",

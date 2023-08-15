@@ -9,23 +9,29 @@ import Box from '@mui/material/Box';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Copyright from '../components/Copyright';
-
-const defaultTheme = createTheme();
 
 export default function CreateAccountPage() {
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get('email'),
-      password: data.get('password'),
-    });
+    let pass = data.get('password');
+    let confirmPass = data.get('confirm-pass'); 
+    if (pass === confirmPass){
+      //TODO:Adicionar envio para API
+      console.log({
+        email: data.get('email'),
+        firstName: data.get('firstName'),
+        lastName: data.get('lastName'),
+        password: pass,
+        confirm_pass: confirmPass
+      });
+    }else{
+      console.log('Senhas diferentes')
+    }
   };
 
   return (
-    <ThemeProvider theme={defaultTheme}>
       <Container component="main" maxWidth="xs">
         <CssBaseline />
         <Box
@@ -108,8 +114,8 @@ export default function CreateAccountPage() {
             </Button>
             <Grid container justifyContent="flex-end">
               <Grid item>
-                <Link href="#" variant="body2">
-                  Already have an account? Sign in
+                <Link href="/login" variant="body2">
+                  Já possui uma conta? Entrar
                 </Link>
               </Grid>
             </Grid>
@@ -117,6 +123,5 @@ export default function CreateAccountPage() {
         </Box>
         <Copyright sx={{ mt: 5 }} />
       </Container>
-    </ThemeProvider>
   );
 }
